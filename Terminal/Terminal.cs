@@ -135,7 +135,7 @@ namespace Terminal
             //int res3 = calc(arr, 0, 6);
 
             //var eul = euler(11);
-            var calc = calculate_sum_from_a(7,49);
+            //var calc = calculate_sum_from_a(7,49);
 
             // int[] prices = new int[] { 11,23,30,40,80,110,22 };
             //var resultat = CalculateTotalPrice(prices, 20);
@@ -157,6 +157,17 @@ namespace Terminal
             //A b = new B();
             //a.affiche();
             //b.affiche();
+
+            //Derived obj = new Base();
+            //obj.Show();
+
+            Competition c = new Competition();
+            Equipe e = new Equipe();
+            Joueur j = new Joueur();
+            c.Equipes.SelectMany(x => x.Nom);
+            //c.Select(e => e.Equipes.SelectMany(d => d.joueurs);
+
+
             Console.ReadLine();
         }
     }

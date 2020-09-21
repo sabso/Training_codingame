@@ -3,11 +3,63 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace Training_codingame
 {
     public class Training
     {
+
+        public static string Reshape(int n, String str)
+        {
+
+            string modifStr;
+            if (str == null)
+            {
+                return str;
+            }
+            var strs = str.Trim().Split(null);
+            var strBuilder = new StringBuilder(strs.Length);
+            for (int i = 0; i < strs.Length; i++)
+            {
+                strBuilder.Append(strs[i]);
+            }
+            modifStr = strBuilder.ToString();
+
+            int nbChar = modifStr.Length;
+            Console.WriteLine(nbChar);
+            if (nbChar <= n)
+            {
+                return modifStr;
+            }
+
+            int newStrLength = modifStr.Length;
+            Console.WriteLine(newStrLength);
+            string whiteSpace = "\n";
+            for (int i = n; i <= newStrLength; i += n)
+            {
+                modifStr = modifStr.Insert(i, whiteSpace);
+                i++;
+                newStrLength++;
+            }
+            return modifStr;
+
+        }
+
+        public class Base
+        {
+            public void Show()
+            {
+                Console.WriteLine("Show from Base Class");
+            }
+        }
+        public class Derived : Base
+        {
+            public void Show() 
+            {
+                Console.WriteLine("Show from Derived class");
+            }
+        }
         public static int plus_proche_de_zero(int[] n)
         {
 
@@ -36,6 +88,36 @@ namespace Training_codingame
 
 
         }
+
+
+        public static string Webnet(int[] values)
+        {
+            string s="";
+           
+
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (values[i] == 0 || values[i] < 0 || values[i] > 0)//.GetType().Equals(Type.Equals(Int32)))
+                {
+                    if (values[i] % 3 == 0)
+                    {
+                        s += "Web";
+                    }
+                    if (values[i] % 5 == 0)
+                    {
+                        s += "Net";
+                    }
+                    else
+                    {
+                        s += values[i];
+                    }
+                }
+               
+            }
+
+            return s;
+        }
+
 
         public class A
         {
@@ -324,7 +406,25 @@ namespace Training_codingame
 
 
         }
+        public static decimal fraction_r(int a, int b)
+        {
 
+            if (b == 0)
+            {
+                throw new DivideByZeroException();
+            }
+            else if ((b % 2 == 0) == false)
+            {
+                throw new ArgumentException();
+            }
+
+            else
+            {
+                return a / b;
+            }
+
+
+        }
 
 
         //public class A
@@ -569,6 +669,31 @@ Sinon Comb_1← (n / p) * Comb_1(n - 1, p - 1)*/
             }
         }
 
+        public class Competition
+        {
+            public int Id { get; set; }
+            public string Nom { get; set; }
+            public IEnumerable<Equipe> Equipes { get; set; }
+        }
+        public class Equipe
+        {
+            public int Id { get; set; }
+            public string Nom { get; set; }
+            public IEnumerable<Joueur> Equipes { get; set; }
+        }
+        public class Joueur
+        {
+            public int Id { get; set; }
+            public string Nom { get; set; }
+           
+        }
+        //public void test()
+        //{
+             
 
+        //    c.Equipes.SelectMany(e => e.Equipes.SelectMany(x => x.Joeurs);
+        //    //c.Select(e => e.Equipes.SelectMany(d => d.joueurs);
+
+        //}
     }
 }

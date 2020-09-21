@@ -129,6 +129,80 @@ namespace TrainingTest
 
         }
 
+        [TestMethod]
+        public void TestCheck()
+        {
+             
+            
+            var a = Training_codingame.Training.Check("{{[[(())]]}}");//true
+            var b = Training_codingame.Training.Check("[()]");//true
+            var c = Training_codingame.Training.Check("(()[])");//true
+            var e = Training_codingame.Training.Check("((");//false
+
+            Assert.IsFalse(e);
+            Assert.IsTrue(a);
+            Assert.IsTrue(b);
+            Assert.IsTrue(c);
+
+        }
+
+        [TestMethod]
+        public void TestFindLargest()
+        {
+
+
+             int[] tab = { 1, 2, 3, 12 };
+            var a = Training_codingame.Training.FindLargest(tab);//true
+
+            Assert.AreEqual(a,12);
+             
+
+        }
+
+        [TestMethod]
+        public void Testfraction()
+        {
+             
+             var a = Training_codingame.Training.fraction_r(2,2);//true
+
+            Assert.AreEqual(a,1);
+
+
+        }
+
+        [TestMethod]
+        public void TestLocateUniverseFormula()
+        {
+
+            var a = Training_codingame.Training.LocateUniverseFormula();//true
+
+            Assert.IsNotNull(a);
+
+
+        }
+
+        [TestMethod]
+        public void TestWebnet()
+        {
+            var values = new[] {1,4,3,7,5,11,15};
+            var res = "14Web7Net11WebNet";
+            var a = Training_codingame.Training.Webnet(values);
+
+            StringAssert.Equals(res,a); 
+
+        }
+
+        [TestMethod]
+        public void TestReshape()
+        {
+            var str1 = "abc\ndef\nghi\nj";
+            var str2 = "12\n34\n56\n";
+            var a = Training_codingame.Training.Reshape(3,str1);
+            var b = Training_codingame.Training.Reshape(2, str2);
+            StringAssert.Equals(a, b);
+
+        }
+
 
 
 
