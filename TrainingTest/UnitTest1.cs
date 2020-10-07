@@ -203,7 +203,19 @@ namespace TrainingTest
 
         }
 
+        [TestMethod]
+        public void Testdance()
+        {
+            
+            var a = Training_codingame.Training.dance(3);
+            var b = Training_codingame.Training.dance(100000);
+            var c = Training_codingame.Training.dance(2147483647);
 
+            Assert.AreEqual(a,-4);
+            Assert.AreEqual(b,-5 );
+            Assert.AreEqual(c,1 );
+
+        }
 
 
     }

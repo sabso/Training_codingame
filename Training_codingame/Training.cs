@@ -9,6 +9,56 @@ namespace Training_codingame
 {
     public class Training
     {
+        public static int getpos(int n)
+        {
+            int[] l = { 0, 1, -1, -4, -5, -3 };
+            return l[n % 6];
+        }
+        public static int getstep(int n)
+        {
+            /* if (n < 2)
+             {
+                 throw new Exception("n doit etre superieur ou egal à 2");
+             }*/
+            int[] l = { 3, 1, -2, -3, -1, 2 };
+            if (n == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return l[n % 6];
+            }
+        }
+        public static int dance(int n)
+        {
+            int resultat = default;
+            if (n == 0)
+            {
+                resultat = 0;
+            }
+            else if (n == 1)
+            {
+                resultat = 1;
+            }
+            else
+            {
+                resultat = getpos(n - 1) + getstep(n);
+            }
+            return resultat;
+        }
+
+
+        public static System.Collections.Generic.IEnumerable<int> Power(int number, int exponent)
+        {
+            int result = 1;
+
+            for (int i = 0; i < exponent; i++)
+            {
+                result = result * number;
+                yield return result;
+            }
+        }
 
         public static string Reshape(int n, String str)
         {
@@ -158,7 +208,7 @@ namespace Training_codingame
                     }
 
                 }
-                ppi = (double)4 * ((double)compteur / (double)pts.Length);
+                ppi = (double)4 * ((double)compteur / (double)pts.Length); 
                 return ppi;
             }
         }

@@ -161,11 +161,23 @@ namespace Terminal
             //Derived obj = new Base();
             //obj.Show();
 
-            Competition c = new Competition();
-            Equipe e = new Equipe();
-            Joueur j = new Joueur();
-            c.Equipes.SelectMany(x => x.Nom);
-            //c.Select(e => e.Equipes.SelectMany(d => d.joueurs);
+            //foreach (int i in Power(2, 8))
+            //{
+            //    Console.Write("{0} ", i);
+            //}
+
+
+            var rands = new Point[10000];
+            Random random = new Random();
+            for (int i = 0; i < rands.Length; i++)
+            {
+                Point p = new Point();
+                p.x = random.NextDouble();
+                p.y = random.NextDouble();
+                rands[i] = p;
+            }
+
+            var resultat = Pi.Approx(rands);
 
 
             Console.ReadLine();
